@@ -5,10 +5,11 @@ DROP TABLE IF EXISTS posts CASCADE;
 
 CREATE TABLE users (
     github_username TEXT NOT NULL PRIMARY KEY,
+    photo_url TEXT NOT NULL
 );
 
 CREATE TABLE posts (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     text TEXT NOT NULL,
-    username TEXT REFERENCES users(github_username),
+    username TEXT REFERENCES users(github_username)
 );
